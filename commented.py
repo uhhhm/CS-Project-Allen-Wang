@@ -1,6 +1,5 @@
 import pygame
 import random
-import numpy as np
 import pygame.freetype  # Enhanced pygame module for loading and rendering computer fonts
 
 # Initialize settings
@@ -154,7 +153,6 @@ while running:
                             win = True
                 elif event.button == 3:  # Right click
                     flags[x][y] = not flags[x][y]  # Toggle flag
-
     pygame.display.flip()  # Update the display
     clock.tick(60)  # Limit frame rate to 60 FPS
 

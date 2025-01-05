@@ -1,6 +1,5 @@
 import pygame
 import random
-import numpy as np
 import pygame.freetype # Enhanced pygame module for loading and rendering computer fonts
 
 # Initialize settings
