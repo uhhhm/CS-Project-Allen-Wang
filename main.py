@@ -28,13 +28,13 @@ Good luck and have fun!
         """)
 
 # Difficulty settings, changing mine count and grid size
-mine_count = 7
+mine_count = 8
 if difficulty == "2":
     grid_size = 16
-    mine_count = 30
+    mine_count = 35
 elif difficulty == "3":
     grid_size = 25
-    mine_count = 70
+    mine_count = 110
 
 # Generate grid and mines
 grid = [[0 for _ in range(grid_size)] for _ in range(grid_size)] 
@@ -123,9 +123,13 @@ while running:
     draw_timer()
 
     if game_over:
-        font.render_to(screen, (10, grid_size * cell_size + 5), "Lost", pygame.Color('red'))
+        font.render_to(screen, (10, grid_size * cell_size + 5), "Lost", pygame.Color('blue'))
+        for i in range(grid_size):
+            for j in range(grid_size):
+                if not revealed[i][j]:
+                    reveal_cell(i, j)
     elif win:
-        font.render_to(screen, (10, grid_size * cell_size + 5), "Won", pygame.Color('red'))
+        font.render_to(screen, (10, grid_size * cell_size + 5), "Won", pygame.Color('blue'))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:  
